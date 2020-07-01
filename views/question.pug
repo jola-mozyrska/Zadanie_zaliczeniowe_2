@@ -1,0 +1,23 @@
+extends layout.pug
+
+block headTitle
+    title Question
+
+block head
+    link(rel="stylesheet" type="text/css" media="screen" href="/static/grid_settings_question.css")
+
+block content
+    .container
+        details
+            summary Wstęp
+            | Wspaniały quiz do zaspokojenia kwarantannowej nudy. Dobrej zabawy!
+        .stoper.optional
+        .penalty.optional
+        .q_id.optional
+        button.cancel_button(type="button") Anuluj quiz
+        article.q_content
+        input.answer.hover_target(type="number")
+        button.end_quiz_button(type="button" disabled="") Zakończ quiz
+        a.right_arrow.arrow ⟶
+        a.left_arrow.arrow(hidden="yes") ⟵
+    script(type="module" src="/static/js/question.js")

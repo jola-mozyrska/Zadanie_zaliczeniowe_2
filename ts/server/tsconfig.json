@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "outDir": "../../js/",
+        "typeRoots": ["./types"],
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "strict": true
+    },
+    "files": [
+        "routers/pageRouter.ts",
+        "routers/userRouter.ts",
+        "routers/start_quiz_utils.ts",
+        "storage/Database.ts",
+        "storage/QuizManager.ts",
+        "storage/User.ts",
+        "storage/UserTable.ts",
+        "app.ts",
+        "utils.ts",
+        "server.ts",
+        "initDB.ts",
+        "config_names.ts",
+        "quizes.ts"
+    ]
+}

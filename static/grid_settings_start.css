@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-row-gap: 100px;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.header {
+    grid-row: 1 / 2;
+}
+
+.start_button {
+    grid-row: 2 / 3;    
+}
+
+.best_scores {
+    grid-row: 3 / 4;
+}

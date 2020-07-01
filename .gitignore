@@ -1,0 +1,6 @@
+node_modules/
+js/
+static/js/
+.idea/
+main_db.sqlite
+sessions.sqlite

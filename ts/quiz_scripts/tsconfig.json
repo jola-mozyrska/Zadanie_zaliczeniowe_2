@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "lib": ["es2017", "DOM"],
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "../../static/js"
+    },
+    "files": [
+        "question.ts",
+        "start.ts",
+        "the_end.ts",
+        "Timer.ts",
+        "types.ts"
+    ]
+}

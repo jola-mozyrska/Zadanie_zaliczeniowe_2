@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+    h1= msg
+
+    ul
+        each q in quizes
+            li
+                a(href="/choose_option/" + q.quiz_id) #{q.quiz_name}
+

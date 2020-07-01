@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+    h1=message
+    form(method='POST', action='/create_quiz')
+        label(for='quiz') Quiz:
+        br
+        br
+        textarea(cols='40' rows='30' name='quiz')
+        br
+        br
+        input(type='hidden', name='_csrf', value=csrfToken)
+        input(type='submit' value='Prześlij')

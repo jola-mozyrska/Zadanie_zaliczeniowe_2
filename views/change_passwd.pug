@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    h1= msg
+    p
+        a(href="/choose_quiz") Quizy
+    form(method='POST', action='')
+        input(type='hidden', name='_csrf' value=csrfToken)
+        label(for='pw_old') Stare hasło:
+        input(type='password' name="old_passwd" id="pw_old" required='')
+        br
+        br
+        label(for='pw_new') Nowe hasło:
+        input(type='password' name="new_passwd" id="pw_new" required='')
+        br
+        br
+        input(type='submit' value='Zmień' id='submitButton')
+

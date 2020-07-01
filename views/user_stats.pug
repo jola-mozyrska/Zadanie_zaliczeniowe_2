@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    p
+        a(href="/") Menu
+    h1= "Wynik quizu"
+    table(style='width:100%', border='1')
+        thead
+            tr
+                th Nr
+                th Odpowiedź
+                th Poprawna odpowiedź
+                th Czy poprawna
+                th Czas
+                th Średni czas
+        tbody
+            each q_desc in questions
+                tr
+                    th #{q_desc.question_id}
+                    th #{q_desc.user_answer}
+                    th #{q_desc.right_answer}
+                    th #{q_desc.correct}
+                    th #{q_desc.time}
+                    th #{q_desc.avg_time}
+

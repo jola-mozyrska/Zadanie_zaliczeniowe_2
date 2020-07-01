@@ -1,0 +1,15 @@
+extends layout.pug
+
+block head
+    link(rel="stylesheet" type="text/css" media="screen" href="/static/grid_settings_start.css")
+
+block content
+    .container
+        header.header
+            h1 Quiz
+            article
+                | Wspaniały quiz do zaspokojenia kwarantannowej nudy. Dobrej zabawy!
+        button.start_button(type="button") START
+        table.best_scores(hidden="")
+    script(type="module" src="/static/js/start.js")
+

@@ -1,0 +1,18 @@
+extends layout.pug
+
+block head
+    link(rel="stylesheet" type="text/css" media="screen" href="/static/grid_settings_the_end.css")
+
+block content
+    .container
+        header.header
+            h1 Zakończyłeś Quiz
+        p.score_text
+        table.stats_table
+            tr
+                th nr pytania
+                th czy odpowiedź była poprawna?
+                th kara
+        button.button_save_score(type="button") Zapisz tylko wynik
+        button.button_save_score_stats(type="button") Zapisz wynik ze statystykami
+    script(type="module" src="/static/js/the_end.js")

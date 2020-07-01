@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    h1= "Ranking"
+    ol
+        each r in rankingRows
+            li=r.score

@@ -1,0 +1,4 @@
+Elementy zapewniające bezpieczeństwo:
+1. brak innerHTML (brak SQL injection)
+2. sprawdzanie typu quiz_t wkładanego przez użytkownika
+3. prepared statement w SQLite

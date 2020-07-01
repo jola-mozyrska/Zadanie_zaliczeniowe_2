@@ -1,0 +1,79 @@
+/* START */
+body {
+    background-image: url("img/math.png");
+    color: white;
+}
+
+article {
+    font-size: 20px;
+}
+
+form {
+    padding-top: 100px;
+    text-align: center;
+}
+
+th, td {
+    padding: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+}
+
+.arrow{
+    font-size: 100px;
+}
+
+.start_button {
+    width: 200px;
+    font-size: 30px;
+    height: 50px;
+}
+
+/* QUESTION */
+.q_content {
+    font-size: 50px;
+    text-align: center;
+}
+
+.arrow:hover, button {
+    cursor: pointer;
+}
+
+.answer {
+    font-size: 200%;
+}
+
+.stoper, .penalty, .q_id {
+    align-items: center; 
+    display: inline-grid;
+    font-size: 20px;
+}
+
+.cancel_button, .end_quiz_button, .answer, .q_content{
+    margin: auto;
+}
+
+.hover_target:hover {
+    background-color: #FFE9EC;
+}
+
+/* END */
+.best_scores {
+    padding: 100px;
+    font-size: 40px;
+    overflow: hidden;
+}
+
+.score_text {
+    font-size: 40px;
+}
+
+
