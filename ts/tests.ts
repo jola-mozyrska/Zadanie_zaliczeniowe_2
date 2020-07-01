@@ -2,7 +2,7 @@ import { WebDriver } from 'selenium-webdriver';
 import { driver } from 'mocha-webdriver';
 import { expect } from 'chai';
 
-const URL = "http://127.0.0.1:1960"
+const URL = "http://127.0.0.1:1410"
 
 async function loginUser1(driver: WebDriver) {
     await driver.get(URL + "/login");
@@ -93,7 +93,7 @@ describe("check solving quiz", () => {
         const savedTimes = [];
         let sumSavedTimes = 0;
         for(let i = 1; i <= 4; ++i) {
-            savedTimes.push(parseInt (await driver.find(`.table > tbody:nth-child(2) > tr:nth-child(${i}) > th:nth-child(5)`).getText(), 10));
+            savedTimes.push(parseInt (await driver.find(`.stats > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(5)`).getText(), 10));
             sumSavedTimes += savedTimes[i - 1];
         }
         console.log(savedTimes);
