@@ -1,6 +1,6 @@
 const quiz1 = {
     "quiz_name": "Arytmetyka dla odważnych",
-    "quiz_desc": "Jakiś opis",
+    "quiz_desc": "Wielkie pytania o życie, wszechświat i całą resztę",
     "quiz_id": 0,
     "total_q": 4,
     "questions_list": [
@@ -33,7 +33,7 @@ const quiz1 = {
 
 const quiz2 = {
     "quiz_name": "Proste dodawanie",
-    "quiz_desc": "Jakiś opis",
+    "quiz_desc": "Coś dla znudzonych przedszkolaków",
     "quiz_id": 0,
     "total_q": 4,
     "questions_list": [

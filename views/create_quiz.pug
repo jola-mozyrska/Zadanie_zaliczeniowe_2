@@ -1,7 +1,10 @@
 extends layout.pug
 
 block content
-    h1=message
+    br
+    br
+    p.msg=message_how_to
+    p.msg=example_json
     form(method='POST', action='/create_quiz')
         label(for='quiz') Quiz:
         br

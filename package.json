@@ -37,7 +37,7 @@
   },
   "scripts": {
     "build": "tsc --build ts/quiz_scripts && tsc --build ts/server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./test.sh",
     "run": "node js/server/server.js",
     "createdb": "node --trace-warnings js/server/initDB.js"
   },

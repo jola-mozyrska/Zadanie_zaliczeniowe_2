@@ -27,6 +27,13 @@ export class QuizManager {
                  WHERE quiz_id = ?;`, [quizId]);
     }
 
+    public async getQuizDescById(quizId : number) {
+        return this.db.get(
+            `SELECT quiz_desc
+                 FROM ${QUIZ_TABLE}
+                 WHERE quiz_id = ?;`, [quizId]);
+    }
+
     public async getQuestionsByQuizId(quizId : number) {
         return this.db.all(
             `SELECT question_id, question_content, correct_answer, penalty

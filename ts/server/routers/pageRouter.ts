@@ -4,6 +4,7 @@ import {User, requireLoggingIn} from "../storage/User";
 import {errorPage} from "../utils";
 import {checkIfLogged} from "../utils";
 import { quiz_t, is_quiz } from "../../quiz_scripts/types";
+import { beginExclusiveTrans } from "../utils";
 
 const pageRouter = express.Router();
 
@@ -47,7 +48,9 @@ pageRouter.get("/start/:quiz_id(\\d+)", async (req, res) => {
     if(await qm.checkQuizSolved(user_id, quiz_id)) {
         return res.redirect('/user_stats/' + quiz_id);
     }
-    return res.render(`start`);
+
+    const row = await qm.getQuizDescById(quiz_id);
+    return res.render(`start`, {quiz_desc : row.quiz_desc});
 });
 
 pageRouter.get("/question/:quiz_id(\\d+)", requireLoggingIn, async (req, res) => {
@@ -58,12 +61,37 @@ pageRouter.get("/the_end/:quiz_id(\\d+)", requireLoggingIn, async (req, res) => 
     return res.render(`the_end`);
 });
 
+const example_json : string =
+`{
+    "quiz_name": "nazwa",
+    "quiz_desc": "opis",
+    "quiz_id": 0,
+    "total_q": 1,
+    "questions_list": [
+        {
+            "question_id": 0,
+            "question_content": "2 + 2 =",
+            "correct_answer": 4,
+            "penalty": 10
+        }
+    ]
+}`;
+
+const message_how_to = `Wpisz quiz w postaci json z atrybutami: quiz_name: string, quiz_desc: string, quiz_id: number, total_q: number, questions_list:
+{question_id: number, question_content: string, correct_answer: number, penalty: number}, np.`;
+
 pageRouter.get("/create_quiz", requireLoggingIn, async (req, res) => {
-    return res.render(`create_quiz`);
+    return res.render(`create_quiz`, {message_how_to, example_json});
 });
 
-pageRouter.post("/create_quiz", requireLoggingIn, async (req, res) => {
-    const quiz = JSON.parse(req.body.quiz);
+pageRouter.post("/create_quiz", requireLoggingIn, beginExclusiveTrans, async (req, res) => {
+    let quiz : any;
+    try {
+        quiz = JSON.parse(req.body.quiz);
+    } catch(e) {
+        return res.render('error', {message : "Obiekt nie jest JSONem"});
+    }
+
     if(!is_quiz(quiz)) {
         console.log(quiz);
         return res.render('error', {message : "Error"});

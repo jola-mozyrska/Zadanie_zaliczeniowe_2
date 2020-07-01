@@ -6,5 +6,5 @@ block content
     ul
         each q in quizes
             li
-                a(href="/choose_option/" + q.quiz_id) #{q.quiz_name}
+                a.quizname(href="/choose_option/" + q.quiz_id) #{q.quiz_name}
 
