@@ -29,8 +29,8 @@
     "@types/sqlite3": "^3.1.6",
     "chai": "^4.2.0",
     "connect-sqlite3": "^0.9.11",
-    "mocha": "^8.0.1",
-    "mocha-webdriver": "^0.2.8",
+    "mocha": "^8.4.0",
+    "mocha-webdriver": "^0.2.11",
     "selenium-webdriver": "^3.6.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
